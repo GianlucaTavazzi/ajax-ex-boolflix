@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="search">
+                <input type="text" name="" value="">
+                <button type="button" name="button">Cerca</button>
+            </div>
+        </header>
+        <main>
+            <div class="conteiner">
+            </div>
+        </main>
+        <script id="templatetab" type="text/x-handlebars-template">
+            <div class="tab">
+                <ul>
+                    <li>Titolo: {{primoparametro}}</li
+                    <li>Titolo originale: {{secondoparametro}}</li>
+                    <li>Lingua: {{terzoparametro}}</li
+                    <li>Voto: {{quartoparametro}}</li>
+                </ul>
+            </div>
+        </script>
+        <script src="main.js" charset="utf-8"></script>
+    </body>
+</html>

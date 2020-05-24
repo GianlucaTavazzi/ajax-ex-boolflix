@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    height: 10vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+main{
+    height: 90vh;
+    background-image: url('sfondo.jpg');
+}
+
+.conteiner{
+    width: 90%;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tab{
+    width: 300px;
+    height: 150px;
+    font-size: 20px;
+    margin: 10px;
+    color: white;
+    background-color: red;
+}
+
+.tab li{
+    list-style-type: none
+}
