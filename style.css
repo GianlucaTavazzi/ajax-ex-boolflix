@@ -27,21 +27,32 @@ main{
 }
 
 .tab{
-    width: 300px;
+    width: 322px;
     min-height: 150px;
     font-size: 20px;
     margin: 10px;
     color: white;
     border: 1px solid white;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.6);;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: relative;
 }
 
 .tab li{
     list-style-type: none
 }
 
-.tab img{
+#list{
+    position: absolute;
+    top: 10px;
+    display: none;
+}
+
+#list img{
     height: 20px;
     vertical-align: sub;
+}
+
+.visible{
+    display: inline-block;
 }

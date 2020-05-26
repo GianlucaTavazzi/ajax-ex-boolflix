@@ -38,6 +38,7 @@ function chiamata_film(testo_input) {
                 var film_corrente = dati[i];
 
                 var tab = {
+                    'immagine' : 'https://image.tmdb.org/t/p/w300' + film_corrente.poster_path,
                     'tipologia' : 'Film',
                     'primoparametro' : film_corrente.title,
                     'secondoparametro' : film_corrente.original_title,
@@ -48,7 +49,15 @@ function chiamata_film(testo_input) {
                 var tab_finale = template_function(tab);
                 $('.conteiner').append(tab_finale);
 
-                $('.search input').val('')
+                $('.search input').val('');
+                
+                $('.conteiner').on('mouseenter', '.tab', function () {
+                    $(this).find('#list').addClass('visible');
+                });
+
+                $('.conteiner').on('mouseleave', '.tab', function () {
+                    $(this).find('#list').removeClass('visible');
+                })
             }
         },
         'error' : function () {
@@ -73,6 +82,7 @@ function chiamata_serie(testo_input) {
                 var serie_corrente = dati[i];
 
                 var tab = {
+                    'immagine' : 'https://image.tmdb.org/t/p/w300' + serie_corrente.poster_path,
                     'tipologia' : 'Serie TV',
                     'primoparametro' : serie_corrente.name,
                     'secondoparametro' : serie_corrente.original_name,
@@ -83,7 +93,15 @@ function chiamata_serie(testo_input) {
                 var tab_finale = template_function(tab);
                 $('.conteiner').append(tab_finale);
 
-                $('.search input').val('')
+                $('.search input').val('');
+
+                $('.conteiner').on('mouseenter', '.tab', function () {
+                    $(this).find('#list').show();
+                });
+
+                $('.conteiner').on('mouseleave', '.tab', function () {
+                    $(this).find('#list').hide();
+                })
             }
         },
         'error' : function () {
