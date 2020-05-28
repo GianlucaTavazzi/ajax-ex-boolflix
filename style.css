@@ -8,8 +8,9 @@ header{
     height: 10vh;
     background-color: black;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 main{
@@ -28,7 +29,7 @@ main{
 
 .tab{
     width: 322px;
-    min-height: 150px;
+    height: 440px;
     font-size: 20px;
     margin: 10px;
     color: white;
@@ -73,11 +74,11 @@ main{
 }
 
 #sinossi{
-    white-space: nowrap;
+    /* white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
-    /* display: -webkit-box;
+    text-overflow: ellipsis; */
+    display: -webkit-box;
    -webkit-box-orient: vertical;
-   -webkit-line-clamp: 3;
-   overflow: hidden; */
+   -webkit-line-clamp: 4;
+   overflow: hidden;
 }
