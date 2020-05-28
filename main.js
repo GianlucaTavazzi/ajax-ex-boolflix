@@ -38,26 +38,21 @@ function chiamata_film(testo_input) {
                 var film_corrente = dati[i];
 
                 var tab = {
-                    'immagine' : 'https://image.tmdb.org/t/p/w300' + film_corrente.poster_path,
+                    'immagine' : image(film_corrente),
                     'tipologia' : 'Film',
                     'primoparametro' : film_corrente.title,
                     'secondoparametro' : film_corrente.original_title,
                     'terzoparametro' : flags(film_corrente),
-                    'quartoparametro' : stars(film_corrente)
+                    'quartoparametro' : stars(film_corrente),
+                    'quintoparametro' : overview(film_corrente),
                 }
 
                 var tab_finale = template_function(tab);
                 $('.conteiner').append(tab_finale);
 
                 $('.search input').val('');
-                
-                $('.conteiner').on('mouseenter', '.tab', function () {
-                    $(this).find('#list').addClass('visible');
-                });
 
-                $('.conteiner').on('mouseleave', '.tab', function () {
-                    $(this).find('#list').removeClass('visible');
-                })
+                hover();
             }
         },
         'error' : function () {
@@ -82,12 +77,13 @@ function chiamata_serie(testo_input) {
                 var serie_corrente = dati[i];
 
                 var tab = {
-                    'immagine' : 'https://image.tmdb.org/t/p/w300' + serie_corrente.poster_path,
+                    'immagine' : image(serie_corrente),
                     'tipologia' : 'Serie TV',
                     'primoparametro' : serie_corrente.name,
                     'secondoparametro' : serie_corrente.original_name,
                     'terzoparametro' : flags(serie_corrente),
-                    'quartoparametro' : stars(serie_corrente)
+                    'quartoparametro' : stars(serie_corrente),
+                    'quintoparametro' : overview(serie_corrente),
                 }
 
                 var tab_finale = template_function(tab);
@@ -95,19 +91,34 @@ function chiamata_serie(testo_input) {
 
                 $('.search input').val('');
 
-                $('.conteiner').on('mouseenter', '.tab', function () {
-                    $(this).find('#list').show();
-                });
-
-                $('.conteiner').on('mouseleave', '.tab', function () {
-                    $(this).find('#list').hide();
-                })
+                hover();
             }
         },
         'error' : function () {
             console.log('Errore');
         }
     })
+}
+
+function image(variabile) {
+    var poster = variabile.poster_path
+    console.log(poster);
+    if (poster != null) {
+        return 'https://image.tmdb.org/t/p/w300' + poster;
+    } else {
+        return 'Immagine_non_disponibile.jpeg'
+    }
+
+}
+
+function hover() {
+    $('.conteiner').on('mouseenter', '.tab', function () {
+        $(this).find('.list').addClass('visible');
+    });
+
+    $('.conteiner').on('mouseleave', '.tab', function () {
+        $(this).find('.list').removeClass('visible');
+    });
 }
 
 function stars(variabile) {
@@ -137,5 +148,14 @@ function flags(variabile) {
         return '<img src="' + bandiera_film + '.png" alt="' + bandiera_film + '">'
     } else {
         return bandiera_film;
+    }
+}
+
+function overview(variabile) {
+    var overview = variabile.overview;
+    if (overview != '') {
+        return overview;
+    } else {
+        return 'Non disponibile'
     }
 }
