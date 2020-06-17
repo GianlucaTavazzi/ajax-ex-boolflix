@@ -48,7 +48,7 @@ function chiamata_film(testo_input) {
                 }
 
                 var tab_finale = template_function(tab);
-                $('.conteiner').append(tab_finale);
+                $('.container').append(tab_finale);
 
                 $('.header-right input').val('');
 
@@ -87,7 +87,7 @@ function chiamata_serie(testo_input) {
                 }
 
                 var tab_finale = template_function(tab);
-                $('.conteiner').append(tab_finale);
+                $('.container').append(tab_finale);
 
                 $('.header-right input').val('');
 
@@ -112,11 +112,11 @@ function image(variabile) {
 }
 
 function hover() {
-    $('.conteiner').on('mouseenter', '.tab', function () {
+    $('.container').on('mouseenter', '.tab', function () {
         $(this).find('.list').addClass('visible');
     });
 
-    $('.conteiner').on('mouseleave', '.tab', function () {
+    $('.container').on('mouseleave', '.tab', function () {
         $(this).find('.list').removeClass('visible');
     });
 }
